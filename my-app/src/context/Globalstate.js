@@ -4,10 +4,15 @@ import AppReducer from "./AppReducer";
 // initial state
 
 const intialstate = {
-  transection: [],
+  transection: [
+    {
+      id: 1,
+      text: "salary",
+      amount: 123,
+    },
+  ],
 };
 
-console.log(intialstate);
 // create context
 
 export const GlobalContext = createContext(intialstate);
@@ -20,14 +25,15 @@ export const Globalprovider = ({ children }) => {
   // Actions
   const deleteTransection = (id) => {
     dispatch({
-      type: "DELETE_TRANSECTION",
+      type: "DELETE",
       payload: id,
     });
   };
 
   const addTransections = (transection) => {
+    console.log(transection);
     dispatch({
-      type: "ADD_TRANSECTION",
+      type: "ADD",
       payload: transection,
     });
   };

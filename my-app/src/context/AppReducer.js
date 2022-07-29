@@ -1,6 +1,7 @@
 const AppReducer = (state, action) => {
+  console.log(state);
   switch (action.type) {
-    case "DELETE_TRANSECTION":
+    case "DELETE":
       return {
         ...state,
         transection: state.transection.filter(
@@ -8,12 +9,11 @@ const AppReducer = (state, action) => {
         ),
       };
 
-    case " ADD_TRANSECTION":
+    case "ADD":
       return {
         ...state,
         transection: [action.payload, ...state.transection],
       };
-
     default:
       return state;
   }
